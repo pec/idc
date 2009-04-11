@@ -29,5 +29,5 @@ public class FriendNode extends Node {
         assert(address.length() > 0);
     }
     
-    
+    public void send(String message) {}
 }
