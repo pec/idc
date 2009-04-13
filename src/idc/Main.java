@@ -24,5 +24,9 @@ public class Main {
         	System.out.println(err);
         	}
         }
+        
+        new IDCManager();
+    }
+
 
 }
