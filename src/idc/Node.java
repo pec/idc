@@ -16,6 +16,7 @@ public class Node {
     private String nickname;
     private String id;
     private byte[] key;
+
     
     public Node(String nickname, String id) {
         if (nickname == null || nickname.length() <= 0) {

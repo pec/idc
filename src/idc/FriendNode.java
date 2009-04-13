@@ -4,7 +4,8 @@
  */
 
 package idc;
-import idc.Node;
+import java.io.*;
+import java.net.*;
 /**
  *
  * @author fridim
@@ -14,6 +15,7 @@ import idc.Node;
  */
 public class FriendNode extends Node {
     private String address;
+    private int port = Config.port;
     
     public FriendNode(String nickname, String id, String address) {
         super(nickname, id);
@@ -29,7 +31,28 @@ public class FriendNode extends Node {
         assert(address.length() > 0);
     }
     
-    public void send(String message) {}
+    public void send(Message message) {
+        Socket socket = null;
+        ObjectOutputStream out = null;
+        ObjectInputStream in = null;
+
+        try {
+            socket = new Socket(address, port);
+            out = new ObjectOutputStream(socket.getOutputStream());
+            in = new ObjectInputStream(socket.getInputStream());
+            out.flush();
+        } catch (UnknownHostException e) {
+            e.printStackTrace(System.err);
+        } catch (IOException e) {
+            e.printStackTrace(System.err);
+        }
+
+        try {
+            out.writeObject(message);
+        } catch (IOException e) {
+            e.printStackTrace(System.err);
+        }
+    }
     
-    public String receive() {return "";}
+    //public Message receive() {}
 }

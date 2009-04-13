@@ -17,9 +17,19 @@ public class IDCManager {
     static private List nodes; // tous les noeuds connus du réseau
     static private List friends; // Connexions directes
     
+    static private Server server; // le serveur qui écoute sur le port Config.port
+    
     IDCManager() {
         nodes = new ArrayList();
         friends = new ArrayList();
+        
+        new Server().start();
+        
+        /* Test */
+        /*
+        FriendNode local = new FriendNode("fridim", "blabla", "localhost");
+        local.send(new Message("coucou", local));
+         */
     }
         
     /* fait du broadcast et retourne une liste de noeuds connectés et qui ne
