@@ -8,7 +8,7 @@ package idc;
 import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
-
+import java.util.*;
 /**
  *
  * @author fridim
@@ -18,6 +18,9 @@ public class IDCManager {
     static private List friends; // Connexions directes
     
     static private Server server; // le serveur qui écoute sur le port Config.port
+
+    private Vector VectorOfPublicKey;
+    private Vector VectorOfSecretKeys; //vecteur de clefs secrète correspondant à chaque conversation privée
     
     IDCManager() {
         nodes = new ArrayList();
