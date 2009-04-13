@@ -30,10 +30,15 @@ public class IDCManager {
        return new ArrayList();
     }
     
-    /* envoie un message à un noeud du réseau */
-    public void send(Node n, String message) {
+    /* envoie un message au réseau */
+    static public void send(Message message) {
         // TODO
     }
     
+    /* envoie un message à un noeud du réseau */
+    static public void send(Node n, Message message) {
+        // TODO
+
+    }
 
 }

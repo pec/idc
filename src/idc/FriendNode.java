@@ -30,4 +30,6 @@ public class FriendNode extends Node {
     }
     
     public void send(String message) {}
+    
+    public String receive() {return "";}
 }
