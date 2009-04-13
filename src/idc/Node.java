@@ -26,13 +26,13 @@ public class Node {
   
   
 
-  public Node(String nickname) {
+  public Node(String nickname,String str) {
 	  	
         if (nickname == null || nickname.length() <= 0) {
             nickname = "Anonymous";
         }
         
-        this.id=new String("id");
+        this.id=str;
         this.nickname = new String (nickname);
         
   }

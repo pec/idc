@@ -8,7 +8,7 @@ import java.io.*;
  * @author fridim
  */
 
-public class Server extends Thread implements Com{
+public class Server extends Thread {
     static private ServerSocket serverSocket;
     
     public void run () {
