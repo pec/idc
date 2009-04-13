@@ -5,6 +5,8 @@
 
 package idc;
 
+import java.security.*;
+
 /**
  *
  * @author fridim
@@ -15,7 +17,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+        Node my_node=new Node("el-indio");
+        try{
+        System.out.println("Node "+my_node.getNickname()+" created with the id : "+my_node.getId().sign().toString());
+        }catch(SignatureException err){
+        	System.out.println(err);
+        	}
+        }
 
 }

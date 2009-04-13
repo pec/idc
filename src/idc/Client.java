@@ -1,6 +1,6 @@
 package idc;
 
-public class Server implements Com{
+public class Client implements Com{
 
 	public void send(Message msg){
 		
